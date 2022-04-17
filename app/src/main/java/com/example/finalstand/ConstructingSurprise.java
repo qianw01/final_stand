@@ -24,6 +24,14 @@ public class ConstructingSurprise extends AppCompatActivity {
         try {
             JSONObject json = new JSONObject(loadJSON());
             JSONArray jArray = json.getJSONArray("constructors");
+            String[][] contentArray = new String[jArray.length()][3];
+
+            for (int i = 0; i < jArray.length(); i++) {
+                JSONObject jOInside = jArray.getJSONObject(i);
+                contentArray[i][0] = jOInside.getString("name");
+                contentArray[i][1] = jOInside.getString("desc");
+                contentArray[i][2] = jOInside.getString("pic");
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

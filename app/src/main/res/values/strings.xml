@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Final Stand</string>
+    <string name="schedule">schedule</string>
+    <string name="grands_prix">gp</string>
+    <string name="home">home</string>
+    <string name="drivers">drivers</string>
+    <string name="constructors">constructors</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
