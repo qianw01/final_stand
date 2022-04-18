@@ -2,18 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.finalstand">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/comic_sans_ms" />
-
-    <font-family xmlns:android="http://schemas.android.com/apk/res/android">
-        <font
-            android:font="@font/comic_sans_ms"
-            android:fontStyle="normal"
-            android:fontWeight="400" />
-    </font-family>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,9 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalStand">
-        <activity
-            android:name=".ConstructingSurprise"
-            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
