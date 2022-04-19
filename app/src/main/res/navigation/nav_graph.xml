@@ -14,4 +14,9 @@
         android:name="com.example.finalstand.GPFragment"
         android:label="fragment_gp"
         tools:layout="@layout/fragment_gp" />
+    <fragment
+        android:id="@+id/constructFragment"
+        android:name="com.example.finalstand.ConstructFragment"
+        android:label="fragment_construct"
+        tools:layout="@layout/fragment_construct" />
 </navigation>
