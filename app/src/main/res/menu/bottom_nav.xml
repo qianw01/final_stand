@@ -11,8 +11,8 @@
         android:icon="@drawable/ic_baseline_5g_24"
         android:title="@string/grands_prix"/>
     <item
-        android:id="@+id/ConstructFragment"
+        android:id="@+id/constructFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_5g_24"
-        android:title="@string/constructors"/>
+        android:title="constructors"/>
 </menu>

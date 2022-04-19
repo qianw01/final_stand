@@ -33,6 +33,7 @@ public class GPAdapter extends RecyclerView.Adapter<GPAdapter.ViewHolder> {
 
         holder.title.setText(GPE.getTitle());
         holder.desc.setText(GPE.getDesc());
+
     }
 
     @Override
