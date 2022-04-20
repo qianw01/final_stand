@@ -23,10 +23,10 @@ import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link GPFragment#newInstance} factory method to
+ * Use the {@link DriverFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GPFragment extends Fragment {
+public class DriverFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,10 +41,10 @@ public class GPFragment extends Fragment {
     private String mParam2;
 
     private static RecyclerView recyclerView;
-    private static GPAdapter GPA;
-    private static ArrayList<GPEntryModel> data;
+    private static DriverAdapter DriverA;
+    private static ArrayList<DriverEntryModel> data;
 
-    public GPFragment() {
+    public DriverFragment() {
         // Required empty public constructor
     }
 
@@ -54,11 +54,11 @@ public class GPFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment GPFragment.
+     * @return A new instance of fragment DriverFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static GPFragment newInstance(String param1, String param2) {
-        GPFragment fragment = new GPFragment();
+    public static DriverFragment newInstance(String param1, String param2) {
+        DriverFragment fragment = new DriverFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -88,26 +88,26 @@ public class GPFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        data = new ArrayList<GPEntryModel>();
+        data = new ArrayList<DriverEntryModel>();
 
         //get info from json
-        //String[][] GPData = readJSON();
+        String[][] DriverData = readJSON();
 
         //populate data
-        for (int i = 0; i < titles.length; i++) {
-            GPEntryModel GPE = new GPEntryModel(titles[i], descs[i], i);
-            data.add(GPE);
+        for (int i = 0; i < DriverData.length; i++) {
+            DriverEntryModel DriverE = new DriverEntryModel(DriverData[i][0], DriverData[i][1], i);
+            data.add(DriverE);
         }
 
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_gp, container, false);
+        View v = inflater.inflate(R.layout.fragment_driver, container, false);
 
-        GPA = new GPAdapter(data);
-        recyclerView = (RecyclerView) v.findViewById(R.id.recyclingGP);
+        DriverA = new DriverAdapter(data);
+        recyclerView = (RecyclerView) v.findViewById(R.id.recyclingDriver);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(GPA);
+        recyclerView.setAdapter(DriverA);
 
         return v;
     }
@@ -116,14 +116,16 @@ public class GPFragment extends Fragment {
     private String[][] readJSON() {
         try {
             JSONObject json = new JSONObject(loadJSON());
-            JSONArray jArray = json.getJSONArray("constructors");
+            JSONArray jArray = json.getJSONArray("Drivers");
             String[][] contentArray = new String[jArray.length()][3];
 
             for (int i = 0; i < jArray.length(); i++) {
-                JSONObject jOInside = jArray.getJSONObject(i);
-                contentArray[i][0] = jOInside.getString("name");
-                contentArray[i][1] = jOInside.getString("desc");
-                contentArray[i][2] = jOInside.getString("pic");
+                JSONObject jInitObj = jArray.getJSONObject(i);
+                String key = (jInitObj.keys().next());
+                JSONObject jOInside = ((JSONObject)jInitObj.get(key));
+                contentArray[i][0] = jOInside.getString("Name");
+                contentArray[i][1] = jOInside.getString("Team");
+                contentArray[i][2] = jOInside.getString("Number");
             }
             return contentArray;
         } catch (JSONException e) {
@@ -135,7 +137,7 @@ public class GPFragment extends Fragment {
     private String loadJSON() {
         String json;
         try {
-            InputStream iS = getContext().getAssets().open("constructing.json");
+            InputStream iS = getContext().getAssets().open("jsondata/drivers.json");
             int size = iS.available();
             byte[] buffer = new byte[size];
             iS.read(buffer);

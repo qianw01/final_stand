@@ -23,7 +23,7 @@ public class GPAdapter extends RecyclerView.Adapter<GPAdapter.ViewHolder> {
     @NonNull
     @Override
     public GPAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.gp_card_layout,parent,false);
         return new ViewHolder(v);
     }
 
@@ -49,7 +49,7 @@ public class GPAdapter extends RecyclerView.Adapter<GPAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            cardView = (MaterialCardView) itemView.findViewById(R.id.card);
+            cardView = (MaterialCardView) itemView.findViewById(R.id.gpCard);
             title = cardView.findViewById(R.id.title);
             desc = cardView.findViewById(R.id.desc);
         }
