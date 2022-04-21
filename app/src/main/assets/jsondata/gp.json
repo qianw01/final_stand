@@ -1,0 +1,193 @@
+{"Grand Prix":[
+
+  {"Spain": {
+    "Date":"February 23-25",
+    "Round":"Testing"
+  }
+
+  },
+
+  {"Bahrain": {
+    "Date":"March 10-12",
+    "Round":"Testing"
+  }
+
+  },
+
+
+  {"Bahrain": {
+    "Date":"March 18-20",
+    "Round":"Round 1",
+    "1st Place": "Charles Leclerc",
+    "2nd PLace": "Carlos Sainz",
+    "3rd Place": "Lewis Hamilton"
+  }
+
+  },
+
+
+
+  {"Saudi Arabia": {
+
+    "Date":"March 25-27",
+    "Round":"Round 2",
+    "1st Place": "Max Verstappen",
+    "2nd PLace": "Charles Leclerc",
+    "3rd Place": "Carlos Sainz"
+  }
+
+  },
+
+
+  {"Austrailia": {
+    "Date":"April 8-10",
+    "Round":"Round 3",
+    "1st Place": "Charles Leclerc",
+    "2nd PLace": "Sergio Perez",
+    "3rd Place": "George Russel"
+  }
+
+  },
+
+
+  {"Italy": {
+    "Date":"April 22-24",
+    "Round":"Round 4"
+  }
+
+  },
+
+
+  {"United States": {
+    "Date":"May 8-10",
+    "Round":"Round 5"
+  }
+
+  },
+
+
+  {"Spain": {
+    "Date":"May 22-25",
+    "Round":"Round 6"
+  }
+
+  },
+
+  {"Monaco": {
+    "Date":"May 27-29",
+    "Round":"Round 7"
+  }
+
+  },
+
+  {"Azerbaijan": {
+    "Date":"June 10-12",
+    "Round":"Round 8"
+  }
+
+  },
+
+  {"Canada": {
+    "Date":"June 17-19",
+    "Round":"Round 9"
+  }
+
+  },
+
+  {"Great Britain": {
+    "Date":"July 1-3",
+    "Round":"Round 10"
+  }
+
+  },
+
+  {"Austria": {
+    "Date":"July 8-10",
+    "Round":"Round 11"
+  }
+
+  },
+
+  {"France": {
+    "Date":"July 22-24",
+    "Round":"Round 12"
+  }
+
+  },
+
+  {"Hungary": {
+    "Date":"July 29-31",
+    "Round":"Round 13"
+  }
+
+  },
+
+  {"Belgium": {
+    "Date":"August 26-28",
+    "Round":"Round 14"
+
+  }
+
+  },
+
+  {"Netherlands": {
+    "Date":"September 2-4",
+    "Round":"Round 15"
+  }
+
+  },
+
+  {"Italy": {
+    "Date":"September 9-11",
+    "Round":"Round 16"
+  }
+
+  },
+
+  {"Singapore": {
+    "Date":"September-October 30-02",
+    "Round":"Round 17"
+  }
+
+  },
+
+
+  {"Japan": {
+    "Date":"May 7-9",
+    "Round":"Round 18"
+
+  }
+
+  },
+
+  {"United States": {
+    "Date":"October 21-23",
+    "Round":"Round 19"
+
+  }
+
+  },
+
+  {"Mexico": {
+    "Date":"October 28-30",
+    "Round":"Round 20"
+  }
+
+  },
+
+  {"Brasil": {
+    "Date":"November 11-13",
+    "Round":"Round 21"
+  }
+
+  },
+
+
+  {"Abu Dhabi": {
+    "Date":"November 18-20",
+    "Round":"Round 22"
+  }
+
+  }
+
+]}
