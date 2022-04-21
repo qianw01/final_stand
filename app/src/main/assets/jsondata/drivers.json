@@ -1,18 +1,187 @@
 {"Drivers":[
   {"Valterri Bottas":{
-      "Name":"Valterri Bottas",
-      "Team":"Alfa Romeo",
-      "Number":"77",
-      "Country":"Finland",
-      "Podiums":"67",
-      "Highest Race Finish":"1"
-    }},
+    "Name":"Valterri Bottas",
+    "Desc": "Valterri previously drove for Mercedes from 2017 to 2021, and Williams from 2013 to 2016. Valterri has won 10 races",
+    "Team":"Alfa Romeo",
+    "Number":"77",
+    "Country":"Finland",
+    "Podiums":"67",
+    "Highest Race Finish":"1"
+  }},
   {"Guanyu Zhou":{
-      "Name":"Guanyu Zhou",
-      "Team":"Alfa Romeo",
-      "Number":"24",
-      "Country":"China",
-      "Podiums":"0",
-      "Highest Race Finish":"10"
-    }}
+    "Name":"Guanyu Zhou",
+    "Desc": "Guanyu is in his rookie year as a F1 driver. He previously drove in F2 for UN-Virtuosi. Guanyu recieved 3rd in the 2021 F2 Championship",
+    "Team":"Alfa Romeo",
+    "Number":"24",
+    "Country":"China",
+    "Podiums":"0",
+    "Highest Race Finish":"10"
+  }},
+
+  {"Lewis Hamilton":{
+    "Name":"Lewis Hamilton",
+    "Team":"Mercedes",
+    "Desc": "Lewis Hamilton has won 7 Driver's Championships. He previously raced for Mclaren from 2007-2013",
+    "Number":"44",
+    "Country":"United Kingdom",
+    "Podiums":"183",
+    "Highest Race Finish":"1"
+  }},
+
+  {"George Russell":{
+    "Name":"George Russell",
+    "Team":"Mercedes",
+    "Desc": "George Russell previously drove for Willams Racing.",
+    "Number":"63",
+    "Country":"United Kingdom",
+    "Podiums":"2",
+    "Highest Race Finish":"2"
+  }},
+
+  {"Charles Leclerc":{
+    "Name":"Charles Leclerc",
+    "Team":"Scuderia Ferrari",
+    "Number":"16",
+    "Country":"Monaco",
+    "Podiums":"16",
+    "Highest Race Finish":"1"
+  }},
+
+  {"Carlos Sainz":{
+    "Name":"Carlos Sainz",
+    "Team":"Scuderia Ferrari",
+    "Number":"55",
+    "Country":"Spain",
+    "Podiums":"8",
+    "Highest Race Finish":"2"
+  }},
+
+
+  {"Max Verstappen":{
+    "Name":"Max Verstappen",
+    "Team":"Red Bull Racing",
+    "Number":"1",
+    "Country":"Netherlands",
+    "Podiums":"61",
+    "Highest Race Finish":"1"
+  }},
+
+  {"Sergio Perez":{
+    "Name":"Sergio Perez",
+    "Team":"Red Bull Racing",
+    "Number":"11",
+    "Country":"Mexico",
+    "Podiums":"16",
+    "Highest Race Finish":"1"
+  }},
+
+  {"Alex Albon":{
+    "Name":"Alex Albon",
+    "Team":"Williams Racing",
+    "Number":"23",
+    "Country":"Thailand",
+    "Podiums":"2",
+    "Highest Race Finish":"3"
+  }},
+
+  {"Nicholas Latifi":{
+    "Name":"Nicholas Latifi",
+    "Team":"Williams Racing",
+    "Number":"6",
+    "Country":"Canada",
+    "Podiums":"N/A",
+    "Highest Race Finish":"10"
+  }},
+
+  {"Nico Hulkenberg":{
+    "Name":"Nico Hulkenberg",
+    "Team":"Aston Martin",
+    "Number":"11",
+    "Country":"Mexico",
+    "Podiums":"16",
+    "Highest Race Finish":"1"
+  }},
+
+  {"Lance Stroll":{
+    "Name":"Lance Stroll",
+    "Team":"Aston Martin",
+    "Number":"18",
+    "Country":"Canada",
+    "Podiums":"3",
+    "Highest Race Finish":"1"
+  }},
+
+  {"Daniel Riccardo":{
+    "Name":"Daniel Riccardo",
+    "Team":"McLaren",
+    "Number":"3",
+    "Country":"Austrailia",
+    "Podiums":"32",
+    "Highest Race Finish":"1"
+  }},
+
+  {"Lando Norris":{
+    "Name":"Lando Norris",
+    "Team":"McLaren",
+    "Number":"4",
+    "Country":"United Kingdom",
+    "Podiums":"5",
+    "Highest Race Finish":"1"
+  }},
+
+  {"Pierre Gasly":{
+    "Name":"Pierre Gasly",
+    "Team":"Alpha Tauri",
+    "Number":"10",
+    "Country":"France",
+    "Podiums":"3",
+    "Highest Race Finish":"1"
+  }},
+
+  {"Yuki Tsunoda":{
+    "Name":"Yuki Tsunoda",
+    "Team":"Alpha Tauri",
+    "Number":"22",
+    "Country":"Japan",
+    "Podiums":"N/A",
+    "Highest Race Finish":"4"
+  }},
+
+  {"Kevin Magnussen":{
+    "Name":"Kevin Magnussen",
+    "Team":"Haas",
+    "Number":"20",
+    "Country":"Denmark",
+    "Podiums":"1",
+    "Highest Race Finish":"2"
+  }},
+
+  {"Mick Schumacher":{
+    "Name":"Mick Schumacher",
+    "Team":"Haas",
+    "Number":"47",
+    "Country":"Germany",
+    "Podiums":"N/A",
+    "Highest Race Finish":"11"
+  }},
+
+  {"Fernando Alonso":{
+    "Name":"Fernando Alonso",
+    "Team":"Alpine",
+    "Number":"14",
+    "Country":"Spain",
+    "Podiums":"98",
+    "Highest Race Finish":"1"
+  }},
+
+  {"Esetban Ocon":{
+    "Name":"Esteban Ocon",
+    "Desc": "",
+    "Team":"Alpine",
+    "Number":"31",
+    "Country":"France",
+    "Podiums":"2",
+    "Highest Race Finish":"1"
+  }}
+
 ]}
