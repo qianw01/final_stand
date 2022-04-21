@@ -15,9 +15,11 @@ import java.util.List;
 public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.ViewHolder> {
 
     private List<DriverEntryModel> DriverList;
+    private final ItemOnClickListener<DriverEntryModel> listener;
 
-    DriverAdapter(List<DriverEntryModel> DriverList) {
+    DriverAdapter(List<DriverEntryModel> DriverList, ItemOnClickListener listener) {
         this.DriverList = DriverList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -34,6 +36,12 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.ViewHolder
         holder.name.setText(DriverE.getName());
         holder.desc.setText(DriverE.getDesc());
 
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemClick(DriverE);
+            }
+        });
     }
 
     @Override
