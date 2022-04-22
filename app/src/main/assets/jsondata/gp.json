@@ -40,6 +40,7 @@
 
 
   {"Austrailia": {
+    "Desc": "The Australian Grand Prix is an annual motor racing event which is under contract to host Formula One until 2025.[1] It is the second oldest surviving motor racing competition held in Australia, after the Alpine rally of East Gippsland. The Grand Prix has moved frequently with 23 different venues having been used since it was first run at Phillip Island in 1928",
     "Date":"April 8-10",
     "Round":"Round 3",
     "1st Place": "Charles Leclerc",
@@ -51,6 +52,7 @@
 
 
   {"Italy": {
+    "Desc": "is the fifth oldest national Grand Prix (after the French Grand Prix, the American Grand Prize, the Spanish Grand Prix and the Russian Grand Prix), having been held since 1921. In 2013 it became the most held Grand Prix (the 2021 edition was the 91st). It is one of the two Grands Prix (along with the British) which has run as an event of the Formula One World Championship Grands Prix every season, continuously since the championship was introduced in 1950. Every Formula One Italian Grand Prix in the World Championship era has been held at Monza except in 1980, when it was held at Imola",
     "Date":"April 22-24",
     "Round":"Round 4"
   }
@@ -59,6 +61,7 @@
 
 
   {"United States": {
+    "Desc": "The United States Grand Prix is a motor racing event that has been held on and off since 1908, when it was known as the American Grand Prize. The Grand Prix later became part of the Formula One World Championship. As of 2021, the Grand Prix has been held 50 times, and it has taken place at ten different locations in total. Since 2012, it has been held every year at the Circuit of the Americas in Austin, Texas, with the exception of 2020 when it was cancelled due to the COVID-19 pandemic in the United States. ",
     "Date":"May 8-10",
     "Round":"Round 5"
   }
@@ -67,6 +70,7 @@
 
 
   {"Spain": {
+    "Desc": " is a Formula One motor racing event currently held at the Circuit de Barcelona-Catalunya. The race is one of the oldest in the world still contested, celebrating its centenary in 2013. The race had modest beginnings as a production car race. Interrupted by the First World War, the race waited a decade for its second running before becoming a staple of the European calendar.",
     "Date":"May 22-25",
     "Round":"Round 6"
   }
@@ -74,6 +78,7 @@
   },
 
   {"Monaco": {
+    "Desc": "is a Formula One motor racing event held annually on the Circuit de Monaco, in late May or early June. Run since 1929, it is widely considered to be one of the most important and prestigious automobile races in the world,[2][3][4] and is one of the races—along with the Indianapolis 500 and the 24 Hours of Le Mans—that form the Triple Crown of Motorsport.[5] The circuit has been called \"an exceptional location of glamour and prestige\".",
     "Date":"May 27-29",
     "Round":"Round 7"
   }
@@ -81,6 +86,7 @@
   },
 
   {"Azerbaijan": {
+    "Desc": "The first Formula One Grand Prix to be held in Azerbaijan was the 2016 European Grand Prix, which took place at the Baku City Circuit. A year later, in 2017, the same venue hosted the first Azerbaijan Grand Prix. The race was held on 25 June and was one of five races to be held on a street circuit during the 2017 Formula One season, along with the Singapore, Monaco, Australian and Canadian Grands Prix. The first Azerbaijan Grand Prix winner was Daniel Ricciardo of Red Bull",
     "Date":"June 10-12",
     "Round":"Round 8"
   }
@@ -169,6 +175,7 @@
   },
 
   {"Mexico": {
+    "Desc": "The Mexican Grand Prix is currently held under the name Mexico City Grand Prix (Spanish: Gran Premio de la Ciudad de México), is a motor racing event held at the Autódromo Hermanos Rodríguez in Mexico City. It first appeared as a non-championship event in 1962 before being held as a championship event in 1963–1970 and 1986–1992. The Grand Prix returned in 2015 at the Mexico City circuit. ",
     "Date":"October 28-30",
     "Round":"Round 20"
   }
@@ -176,6 +183,7 @@
   },
 
   {"Brasil": {
+    "Desc": "The Brasillian Grand Prix currently held under the name São Paulo Grand Prix (Portuguese: Grande Prêmio de São Paulo), is a Formula One championship race which is currently held at the Autódromo José Carlos Pace in Interlagos neighborhood, Cidade Dutra, São Paulo. ",
     "Date":"November 11-13",
     "Round":"Round 21"
   }
