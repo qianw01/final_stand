@@ -2,6 +2,7 @@ package com.example.finalstand;
 
 import android.os.Bundle;
 
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.TextView;
+
+import com.google.android.material.card.MaterialCardView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,7 +30,7 @@ import java.util.ArrayList;
  * Use the {@link DriverFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DriverFragment extends Fragment {
+public class DriverFragment extends Fragment implements ItemOnClickListener<DriverEntryModel> {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,7 +45,7 @@ public class DriverFragment extends Fragment {
     private String mParam2;
 
     private static RecyclerView recyclerView;
-    private static DriverAdapter DriverA;
+    private static DriverAdapter driverA;
     private static ArrayList<DriverEntryModel> data;
 
     public DriverFragment() {
@@ -91,23 +95,24 @@ public class DriverFragment extends Fragment {
         data = new ArrayList<DriverEntryModel>();
 
         //get info from json
-        String[][] DriverData = readJSON();
+        String[][] driverData = readJSON();
 
         //populate data
-        for (int i = 0; i < DriverData.length; i++) {
-            DriverEntryModel DriverE = new DriverEntryModel(DriverData[i][0], DriverData[i][1], i);
+        for (int i = 0; i < driverData.length; i++) {
+            DriverEntryModel DriverE = new DriverEntryModel(driverData[i][0], driverData[i][1], i);
             data.add(DriverE);
         }
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_driver, container, false);
 
-        DriverA = new DriverAdapter(data);
+        driverA = new DriverAdapter(data, this);
+
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclingDriver);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(DriverA);
+        recyclerView.setAdapter(driverA);
 
         return v;
     }
@@ -137,7 +142,7 @@ public class DriverFragment extends Fragment {
     private String loadJSON() {
         String json;
         try {
-            InputStream iS = getContext().getAssets().open("jsondata/drivers.json");
+            InputStream iS = getContext().getAssets().open("jsondata/driversTest.json");
             int size = iS.available();
             byte[] buffer = new byte[size];
             iS.read(buffer);
@@ -148,5 +153,19 @@ public class DriverFragment extends Fragment {
             return null;
         }
         return json;
+    }
+
+    //------------ItemOnClickListener stuff-------------------
+    @Override
+    public void onItemClick(int pos, DriverEntryModel item, TextView textView) {
+        Fragment dEF = DriverExpandedFragment.newInstance(item, ViewCompat.getTransitionName(textView));
+        Log.d("log", ViewCompat.getTransitionName(textView));
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .setReorderingAllowed(true)
+                .addSharedElement(textView, ViewCompat.getTransitionName(textView))
+                .addToBackStack(null)
+                .replace(R.id.navHostFrag, dEF)
+                .commit();
     }
 }

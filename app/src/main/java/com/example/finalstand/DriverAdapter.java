@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
@@ -14,12 +16,12 @@ import java.util.List;
 
 public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.ViewHolder> {
 
-    private List<DriverEntryModel> DriverList;
+    private List<DriverEntryModel> driverList;
     private final ItemOnClickListener<DriverEntryModel> listener;
 
-    DriverAdapter(List<DriverEntryModel> DriverList, ItemOnClickListener listener) {
-        this.DriverList = DriverList;
-        this.listener = listener;
+    DriverAdapter(List<DriverEntryModel> DriverList, ItemOnClickListener<DriverEntryModel> l) {
+        this.driverList = DriverList;
+        this.listener = l;
     }
 
     @NonNull
@@ -31,22 +33,24 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull DriverAdapter.ViewHolder holder, int position) {
-        final DriverEntryModel DriverE = DriverList.get(position);
+        final DriverEntryModel driverE = driverList.get(position);
 
-        holder.name.setText(DriverE.getName());
-        holder.desc.setText(DriverE.getDesc());
+        holder.name.setText(driverE.getName());
+        holder.desc.setText(driverE.getDesc());
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
+        ViewCompat.setTransitionName(holder.name, driverE.getName());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onItemClick(DriverE);
+                listener.onItemClick(holder.getAdapterPosition(), driverE, holder.name);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return DriverList.size();
+        return driverList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
