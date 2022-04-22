@@ -38,13 +38,12 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.ViewHolder
         holder.team.setText("Team: " + driverE.getTeam());
         holder.number.setText("Number: " + driverE.getNumber());
 
-        ViewCompat.setTransitionName(holder.name, driverE.getName());
-        ViewCompat.setTransitionName(holder.team, driverE.getTeam());
+        ViewCompat.setTransitionName(holder.cardView, driverE.getName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onItemClick(holder.getAdapterPosition(), driverE, holder.name, holder.team);
+                listener.onItemClick(holder.getAdapterPosition(), driverE, holder.cardView);
             }
         });
     }

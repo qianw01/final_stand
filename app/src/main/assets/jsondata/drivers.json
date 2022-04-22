@@ -141,7 +141,7 @@
 
   {"Pierre Gasly":{
     "Name":"Pierre Gasly",
-    "Dsec": "Gasly is a French racing driver, currently competing in Formula One under the French flag, racing for Scuderia AlphaTauri. Gasly took his maiden Formula One victory at the 2020 Italian Grand Prix while driving for AlphaTauri.",
+    "Desc": "Gasly is a French racing driver, currently competing in Formula One under the French flag, racing for Scuderia AlphaTauri. Gasly took his maiden Formula One victory at the 2020 Italian Grand Prix while driving for AlphaTauri.",
     "Team":"Alpha Tauri",
     "Number":"10",
     "Country":"France",

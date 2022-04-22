@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.transition.Hold;
 
 import org.json.JSONArray;
@@ -125,6 +126,7 @@ public class DriverFragment extends Fragment implements ItemOnClickListener<Driv
         // to the origin fragment, gives a chance for the layout
         // to be fully laid out before animating it
         ViewGroup viewGroup = (ViewGroup) view.getParent();
+        postponeEnterTransition();
         viewGroup
                 .getViewTreeObserver()
                 .addOnPreDrawListener(() -> {
@@ -182,12 +184,14 @@ public class DriverFragment extends Fragment implements ItemOnClickListener<Driv
 
     //------------ItemOnClickListener stuff-------------------
     @Override
-    public void onItemClick(int pos, DriverEntryModel item, TextView nameView, TextView teamView) {
-        Fragment dEF = DriverExpandedFragment.newInstance(item, ViewCompat.getTransitionName(nameView), ViewCompat.getTransitionName(nameView));
+    public void onItemClick(int pos, DriverEntryModel item, MaterialCardView cardView) {
+        String transName = ViewCompat.getTransitionName(cardView);
+        Fragment dEF = DriverExpandedFragment.newInstance(item, transName);
+        Log.d("log", "onitemclick: " + transName);
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
                 .setReorderingAllowed(true)
-                .addSharedElement(nameView, ViewCompat.getTransitionName(nameView))
+                .addSharedElement(cardView, transName)
                 .addToBackStack(null)
                 .replace(R.id.navHostFrag, dEF)
                 .commit();

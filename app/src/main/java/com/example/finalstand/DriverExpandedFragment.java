@@ -1,5 +1,6 @@
 package com.example.finalstand;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -7,6 +8,7 @@ import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.transition.TransitionInflater;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,8 +28,6 @@ public class DriverExpandedFragment extends Fragment {
     private static final String EXTRA_ENTRY_MODEL = "entry";
     private static final String EXTRA_TRANSITION_NAME = "transition name";
 
-    private String sharedViewId = "";
-
     public DriverExpandedFragment() {
         // Required empty public constructor
     }
@@ -39,24 +39,27 @@ public class DriverExpandedFragment extends Fragment {
      * @return A new instance of fragment DriverExpandedFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DriverExpandedFragment newInstance(DriverEntryModel eM, String transitionName, String transitionTeam) {
+    public static DriverExpandedFragment newInstance(DriverEntryModel eM, String transitionName) {
         DriverExpandedFragment fragment = new DriverExpandedFragment();
         Bundle args = new Bundle();
         args.putParcelable(EXTRA_ENTRY_MODEL, eM);
+        Log.d("log", "newInstance: " + transitionName);
         args.putString(EXTRA_TRANSITION_NAME, transitionName);
-        args.putString(EXTRA_TRANSITION_NAME, transitionTeam);
         fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        MaterialContainerTransform trans = new MaterialContainerTransform();
+        trans.setDuration(1000);
+        trans.setFadeMode(MaterialContainerTransform.FADE_MODE_CROSS);
+        trans.setElevationShadowEnabled(true);
+        trans.setScrimColor(Color.TRANSPARENT);
+
+        setSharedElementEnterTransition(trans);
         super.onCreate(savedInstanceState);
-
-        sharedViewId = getArguments().getString("itemTransitionName");
-
-        setSharedElementEnterTransition(new MaterialContainerTransform());
-        postponeEnterTransition();
+        //postponeEnterTransition();
     }
 
     @Override
@@ -70,10 +73,11 @@ public class DriverExpandedFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         DriverEntryModel dEM = getArguments().getParcelable(EXTRA_ENTRY_MODEL);
-        //String transitionName = getArguments().getString(EXTRA_TRANSITION_NAME);
+        String transitionName = getArguments().getString(EXTRA_TRANSITION_NAME);
 
-        ViewCompat.setTransitionName(view.getRootView(), sharedViewId);
-        super.onViewCreated(view, savedInstanceState);
+        ViewCompat.setTransitionName(view, transitionName);
+
+        Log.d("log", "onViewCreated: " + getArguments().getString(EXTRA_TRANSITION_NAME));
 
         TextView driverName = (TextView) view.findViewById(R.id.driverName);
         TextView driverTeam = (TextView) view.findViewById(R.id.driverTeam);
