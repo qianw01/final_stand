@@ -52,7 +52,7 @@
 
 
   {"Italy": {
-    "Desc": "is the fifth oldest national Grand Prix (after the French Grand Prix, the American Grand Prize, the Spanish Grand Prix and the Russian Grand Prix), having been held since 1921. In 2013 it became the most held Grand Prix (the 2021 edition was the 91st). It is one of the two Grands Prix (along with the British) which has run as an event of the Formula One World Championship Grands Prix every season, continuously since the championship was introduced in 1950. Every Formula One Italian Grand Prix in the World Championship era has been held at Monza except in 1980, when it was held at Imola",
+    "Desc": "The Italian Grand Prix is the fifth oldest national Grand Prix (after the French Grand Prix, the American Grand Prize, the Spanish Grand Prix and the Russian Grand Prix), having been held since 1921. In 2013 it became the most held Grand Prix (the 2021 edition was the 91st). It is one of the two Grands Prix (along with the British) which has run as an event of the Formula One World Championship Grands Prix every season, continuously since the championship was introduced in 1950. Every Formula One Italian Grand Prix in the World Championship era has been held at Monza except in 1980, when it was held at Imola",
     "Date":"April 22-24",
     "Round":"Round 4"
   }
@@ -94,6 +94,7 @@
   },
 
   {"Canada": {
+    "Desc": "The Canadian Grand Prix (French: Grand Prix du Canada) is an annual motor racing event held since 1961. It has been part of the Formula One World Championship since 1967. It was first staged at Mosport Park in Bowmanville, Ontario, as a sports car event, before alternating between Mosport and Circuit Mont-Tremblant, Quebec, after Formula One took over the event.",
     "Date":"June 17-19",
     "Round":"Round 9"
   }
@@ -101,6 +102,7 @@
   },
 
   {"Great Britain": {
+    "Desc": "The British Grand Prix is a Grand Prix motor race organised in the United Kingdom by the Royal Automobile Club. First held in 1926, the British Grand Prix has been held annually since 1948 and has been a round of the FIA Formula One World Championship every year since 1950.",
     "Date":"July 1-3",
     "Round":"Round 10"
   }
@@ -122,6 +124,7 @@
   },
 
   {"Hungary": {
+    "Desc": "The Hungarian Grand Prix is a motor racing event held annually in Mogyoród. Since 1986, the race has been a round of the FIA Formula One World Championship. ",
     "Date":"July 29-31",
     "Round":"Round 13"
   }
@@ -129,6 +132,7 @@
   },
 
   {"Belgium": {
+    "Desc": "The Belgium Grand Prix is a motor racing event which forms part of the Formula One World Championship. The first national race of Belgium was held in 1925 at the Spa region's race course, an area of the country that had been associated with motor sport since the very early years of racing",
     "Date":"August 26-28",
     "Round":"Round 14"
 
@@ -144,6 +148,7 @@
   },
 
   {"Italy": {
+    "Desc": "The Italian Grand Prix is the fifth oldest national Grand Prix (after the French Grand Prix, the American Grand Prize, the Spanish Grand Prix and the Russian Grand Prix), having been held since 1921. In 2013 it became the most held Grand Prix (the 2021 edition was the 91st). It is one of the two Grands Prix (along with the British) which has run as an event of the Formula One World Championship Grands Prix every season, continuously since the championship was introduced in 1950. Every Formula One Italian Grand Prix in the World Championship era has been held at Monza except in 1980, when it was held at Imola\",",
     "Date":"September 9-11",
     "Round":"Round 16"
   }
@@ -151,6 +156,7 @@
   },
 
   {"Singapore": {
+    "Desc": "The Singapre Grand Prix is a motor racing event which forms part of the Formula One World Championship. The event takes place on the Marina Bay Street Circuit and was the inaugural night race and first street circuit in Asia designed for Formula One races",
     "Date":"September-October 30-02",
     "Round":"Round 17"
   }
@@ -159,6 +165,7 @@
 
 
   {"Japan": {
+    "Desc": "The Japanese Grand Prix is a motor racing event in the calendar of the Formula One World Championship. Historically, Japan has been one of the last races of the season, and as such the Japanese Grand Prix has been the venue for many title-deciding races, with 13 World Champions being crowned over the 34 World Championship Japanese Grands Prix that have been hosted. Japan was the only Asian nation to host a Formula One race (including the Pacific Grand Prix) until Malaysia joined the calendar in 1999. ",
     "Date":"May 7-9",
     "Round":"Round 18"
 
@@ -167,6 +174,7 @@
   },
 
   {"United States": {
+    "Desc": "The United States Grand Prix is a motor racing event that has been held on and off since 1908, when it was known as the American Grand Prize. The Grand Prix later became part of the Formula One World Championship. As of 2021, the Grand Prix has been held 50 times, and it has taken place at ten different locations in total. Since 2012, it has been held every year at the Circuit of the Americas in Austin, Texas, with the exception of 2020 when it was cancelled due to the COVID-19 pandemic in the United States. ",
     "Date":"October 21-23",
     "Round":"Round 19"
 
@@ -192,6 +200,7 @@
 
 
   {"Abu Dhabi": {
+    "Desc": "s a Formula One motor racing event. It was announced in early 2007 at the Abu Dhabi F1 Festival in the United Arab Emirates. The first race took place on 1 November 2009, held at the Hermann Tilke designed Yas Marina Circuit.",
     "Date":"November 18-20",
     "Round":"Round 22"
   }
