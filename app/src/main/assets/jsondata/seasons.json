@@ -2,6 +2,7 @@
 
 
   {"2021 Season":{
+    "Season": "2021",
     "Driver's Champion": "Max Verstappen",
     "Driver's Second Place": "Lewis Hamilton",
     "Driver's Third Place": "Valterri Bottas",
@@ -12,6 +13,7 @@
   },
 
   {"2020 Season":{
+    "Season": "2020",
     "Driver's Champion": "Lewis Hamilton",
     "Driver's Second Place": "Valterri Bottas",
     "Driver's Third Place": "Max Verstappen",
@@ -23,6 +25,7 @@
 
 
   {"2019 Season":{
+    "Season": "2019",
     "Driver's Champion": "Lewis Hamilton",
     "Driver's Second Place": "Valterri Bottas",
     "Driver's Third Place": "Max Verstappen",
@@ -35,6 +38,7 @@
 
 
   {"2018 Season":{
+    "Season": "2018",
     "Driver's Champion": "Lewis Hamilton",
     "Driver's Second Place": "Sebastian Vettel",
     "Driver's Third Place": "Kimi Raikkonen",
@@ -47,6 +51,7 @@
 
 
   {"2017 Season":{
+    "Season": "2017",
     "Driver's Champion": "Lewis Hamilton",
     "Driver's Second Place": "Sebastian Vettel",
     "Driver's Third Place": "Valterri Bottas",
@@ -58,6 +63,7 @@
   },
 
   {"2016 Season":{
+    "Season": "2016",
     "Driver's Champion": "Nico Rosberg",
     "Driver's Second Place": "Lewis Hamilton",
     "Driver's Third Place": "Daniel Riccardo",
@@ -69,6 +75,7 @@
   },
 
   {"2015 Season":{
+    "Season": "2015",
     "Driver's Champion": "Lewis Hamilton",
     "Driver's Second Place": "Nico Rosberg",
     "Driver's Third Place": "Sebastian Vettel",
