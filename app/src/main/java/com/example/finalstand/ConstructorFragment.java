@@ -2,8 +2,6 @@ package com.example.finalstand;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -17,23 +15,20 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
 
-import com.google.android.material.transition.Hold;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Driver;
 import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link DriverFragment#newInstance} factory method to
+ * Use the {@link ConstructorFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DriverFragment extends Fragment implements ItemOnClickListener<DriverEntryModel> {
+public class ConstructorFragment extends Fragment implements ItemOnClickListener<ConstructorEntryModel> {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,10 +40,10 @@ public class DriverFragment extends Fragment implements ItemOnClickListener<Driv
     private String mParam2;
 
     private static RecyclerView recyclerView;
-    private static DriverAdapter driverA;
-    private static ArrayList<DriverEntryModel> data;
+    private static ConstructorAdapter constructorA;
+    private static ArrayList<ConstructorEntryModel> data;
 
-    public DriverFragment() {
+    public ConstructorFragment() {
         // Required empty public constructor
     }
 
@@ -58,11 +53,11 @@ public class DriverFragment extends Fragment implements ItemOnClickListener<Driv
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DriverFragment.
+     * @return A new instance of fragment ConstructorFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DriverFragment newInstance(String param1, String param2) {
-        DriverFragment fragment = new DriverFragment();
+    public static ConstructorFragment newInstance(String param1, String param2) {
+        ConstructorFragment fragment = new ConstructorFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -75,7 +70,6 @@ public class DriverFragment extends Fragment implements ItemOnClickListener<Driv
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        setExitTransition(new Hold());
     }
 
     private void scheduleStartPostponedTransition(final View sharedElement) {
@@ -93,69 +87,45 @@ public class DriverFragment extends Fragment implements ItemOnClickListener<Driv
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        data = new ArrayList<DriverEntryModel>();
+        data = new ArrayList<ConstructorEntryModel>();
 
         //get info from json
-        String[][] driverData = readJSON();
+        String[][] constructorData = readJSON();
 
         //populate data
-        for (int i = 0; i < driverData.length; i++) {
-            DriverEntryModel DriverE = new DriverEntryModel(driverData[i][0], "desc", driverData[i][2], driverData[i][3], driverData[i][4], driverData[i][5], driverData[i][6], 1);
-            data.add(DriverE);
+        for (int i = 0; i < constructorData.length; i++) {
+            ConstructorEntryModel ConstructorE = new ConstructorEntryModel(constructorData[i][0], constructorData[i][1], constructorData[i][2], i);
+            data.add(ConstructorE);
         }
 
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_driver, container, false);
+        View v = inflater.inflate(R.layout.fragment_constructor, container, false);
 
-        driverA = new DriverAdapter(data, this);
+        constructorA = new ConstructorAdapter(data, this);
 
-        recyclerView = (RecyclerView) v.findViewById(R.id.recyclingDriver);
+        recyclerView = (RecyclerView) v.findViewById(R.id.recyclingConstructor);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(driverA);
+        recyclerView.setAdapter(constructorA);
 
         return v;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        // this is required to animate correctly when the user returns
-        // to the origin fragment, gives a chance for the layout
-        // to be fully laid out before animating it
-        ViewGroup viewGroup = (ViewGroup) view.getParent();
-        viewGroup
-                .getViewTreeObserver()
-                .addOnPreDrawListener(() -> {
-                    startPostponedEnterTransition();
-                    return true;
-                });
-
-        super.onViewCreated(view, savedInstanceState);
-
     }
 
     //---------------json stuff--------------------
     private String[][] readJSON() {
         try {
             JSONObject json = new JSONObject(loadJSON());
-            JSONArray jArray = json.getJSONArray("Drivers");
-            String[][] contentArray = new String[jArray.length()][7];
+            JSONArray jArray = json.getJSONArray("Constructors");
+            String[][] contentArray = new String[jArray.length()][3];
 
             for (int i = 0; i < jArray.length(); i++) {
-                //gets proper JSON stuff
                 JSONObject jInitObj = jArray.getJSONObject(i);
                 String key = (jInitObj.keys().next());
                 JSONObject jOInside = ((JSONObject)jInitObj.get(key));
-
-                //populates content array
                 contentArray[i][0] = jOInside.getString("Name");
-                contentArray[i][2] = jOInside.getString("Team");
-                contentArray[i][3] = jOInside.getString("Number");
-                contentArray[i][4] = jOInside.getString("Country");
-                contentArray[i][5] = jOInside.getString("Podiums");
-                contentArray[i][6] = jOInside.getString("Highest Race Finish");
+                contentArray[i][1] = jOInside.getString("Driver_1");
+                contentArray[i][2] = jOInside.getString("Driver_2");
             }
             return contentArray;
         } catch (JSONException e) {
@@ -167,7 +137,7 @@ public class DriverFragment extends Fragment implements ItemOnClickListener<Driv
     private String loadJSON() {
         String json;
         try {
-            InputStream iS = getContext().getAssets().open("jsondata/drivers.json");
+            InputStream iS = getContext().getAssets().open("jsondata/constructors.json");
             int size = iS.available();
             byte[] buffer = new byte[size];
             iS.read(buffer);
@@ -182,12 +152,13 @@ public class DriverFragment extends Fragment implements ItemOnClickListener<Driv
 
     //------------ItemOnClickListener stuff-------------------
     @Override
-    public void onItemClick(int pos, DriverEntryModel item, TextView nameView, TextView teamView) {
-        Fragment dEF = DriverExpandedFragment.newInstance(item, ViewCompat.getTransitionName(nameView), ViewCompat.getTransitionName(nameView));
+    public void onItemClick(int pos, ConstructorEntryModel item, TextView textView) {
+        Fragment dEF = ConstructorExpandedFragment.newInstance(item, ViewCompat.getTransitionName(textView));
+        Log.d("log", ViewCompat.getTransitionName(textView));
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
                 .setReorderingAllowed(true)
-                .addSharedElement(nameView, ViewCompat.getTransitionName(nameView))
+                .addSharedElement(textView, ViewCompat.getTransitionName(textView))
                 .addToBackStack(null)
                 .replace(R.id.navHostFrag, dEF)
                 .commit();

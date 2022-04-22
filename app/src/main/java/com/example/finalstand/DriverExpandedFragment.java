@@ -3,6 +3,7 @@ package com.example.finalstand;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.transition.TransitionInflater;
 
@@ -10,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.google.android.material.transition.MaterialContainerTransform;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +26,8 @@ public class DriverExpandedFragment extends Fragment {
     private static final String EXTRA_ENTRY_MODEL = "entry";
     private static final String EXTRA_TRANSITION_NAME = "transition name";
 
+    private String sharedViewId = "";
+
     public DriverExpandedFragment() {
         // Required empty public constructor
     }
@@ -34,11 +39,12 @@ public class DriverExpandedFragment extends Fragment {
      * @return A new instance of fragment DriverExpandedFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DriverExpandedFragment newInstance(DriverEntryModel eM, String transitionName) {
+    public static DriverExpandedFragment newInstance(DriverEntryModel eM, String transitionName, String transitionTeam) {
         DriverExpandedFragment fragment = new DriverExpandedFragment();
         Bundle args = new Bundle();
         args.putParcelable(EXTRA_ENTRY_MODEL, eM);
         args.putString(EXTRA_TRANSITION_NAME, transitionName);
+        args.putString(EXTRA_TRANSITION_NAME, transitionTeam);
         fragment.setArguments(args);
         return fragment;
     }
@@ -46,7 +52,11 @@ public class DriverExpandedFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setSharedElementEnterTransition(TransitionInflater.from(getContext()).inflateTransition(android.R.transition.move));
+
+        sharedViewId = getArguments().getString("itemTransitionName");
+
+        setSharedElementEnterTransition(new MaterialContainerTransform());
+        postponeEnterTransition();
     }
 
     @Override
@@ -59,10 +69,28 @@ public class DriverExpandedFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        DriverEntryModel animalItem = getArguments().getParcelable(EXTRA_ENTRY_MODEL);
-        String transitionName = getArguments().getString(EXTRA_TRANSITION_NAME);
+        DriverEntryModel dEM = getArguments().getParcelable(EXTRA_ENTRY_MODEL);
+        //String transitionName = getArguments().getString(EXTRA_TRANSITION_NAME);
+
+        ViewCompat.setTransitionName(view.getRootView(), sharedViewId);
+        super.onViewCreated(view, savedInstanceState);
 
         TextView driverName = (TextView) view.findViewById(R.id.driverName);
-        driverName.setTransitionName(transitionName);
+        TextView driverTeam = (TextView) view.findViewById(R.id.driverTeam);
+        TextView driverNumber = (TextView) view.findViewById(R.id.driverNumber);
+        TextView driverCountry = (TextView) view.findViewById(R.id.driverCountry);
+        TextView driverPodiums = (TextView) view.findViewById(R.id.driverPodiums);
+        TextView driverHFinish = (TextView) view.findViewById(R.id.driverHFinish);
+        TextView driverDesc = (TextView) view.findViewById(R.id.driverDesc);
+
+        driverName.setText(dEM.getName());
+        driverTeam.setText("Team: " + dEM.getTeam());
+        driverNumber.setText(dEM.getNumber());
+        driverCountry.setText("Country: " + dEM.getCountry());
+        driverPodiums.setText("Podiums: " + dEM.getPodiums());
+        driverHFinish.setText("Highest Race Finish: " + dEM.gethFinish());
+        driverDesc.setText("description for driver");
+
+        //driverName.setTransitionName(transitionName);
     }
 }

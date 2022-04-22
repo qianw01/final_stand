@@ -5,15 +5,14 @@
     android:id="@+id/constructorFrame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DriverExpandedFragment"
-    android:transitionName="expandDriver">
+    tools:context=".ConstructorExpandedFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/driverNumber"
+            android:id="@+id/constructorNumber"
             android:layout_width="0dp"
             android:layout_height="1000dp"
             android:lineSpacingExtra="-100sp"
@@ -38,7 +37,7 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/driverName"
+            android:id="@+id/constructorName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -49,7 +48,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/driverTeam"
+            android:id="@+id/constructorTeam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
@@ -57,10 +56,10 @@
             android:text="team"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/driverName" />
+            app:layout_constraintTop_toBottomOf="@+id/constructorName" />
 
         <TextView
-            android:id="@+id/driverCountry"
+            android:id="@+id/constructorCountry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
@@ -68,10 +67,10 @@
             android:text="country"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/driverTeam" />
+            app:layout_constraintTop_toBottomOf="@+id/constructorTeam" />
 
         <TextView
-            android:id="@+id/driverPodiums"
+            android:id="@+id/constructorPodiums"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
@@ -79,10 +78,10 @@
             android:text="podiums"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/driverCountry" />
+            app:layout_constraintTop_toBottomOf="@+id/constructorCountry" />
 
         <TextView
-            android:id="@+id/driverHFinish"
+            android:id="@+id/constructorHFinish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
@@ -90,10 +89,10 @@
             android:text="highest finish"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/driverPodiums" />
+            app:layout_constraintTop_toBottomOf="@+id/constructorPodiums" />
 
         <TextView
-            android:id="@+id/driverDesc"
+            android:id="@+id/constructorDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
@@ -101,7 +100,7 @@
             android:text="description"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/driverHFinish" />
+            app:layout_constraintTop_toBottomOf="@+id/constructorHFinish" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

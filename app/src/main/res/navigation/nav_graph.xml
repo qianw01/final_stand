@@ -16,12 +16,17 @@
         tools:layout="@layout/fragment_gp" />
     <fragment
         android:id="@+id/constructFragment"
-        android:name="com.example.finalstand.ConstructFragment"
+        android:name="com.example.finalstand.ConstructorFragment"
         android:label="fragment_construct"
-        tools:layout="@layout/fragment_construct" />
+        tools:layout="@layout/fragment_constructor" />
     <fragment
         android:id="@+id/driverFragment"
         android:name="com.example.finalstand.DriverFragment"
         android:label="fragment_driver"
         tools:layout="@layout/fragment_driver" />
+    <fragment
+        android:id="@+id/seasonsFragment"
+        android:name="com.example.finalstand.SeasonsFragment"
+        android:label="fragment_seasons"
+        tools:layout="@layout/fragment_seasons" />
 </navigation>
