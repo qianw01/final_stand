@@ -2,6 +2,7 @@
 
   {"Alfa Romeo":{
     "Name":"Alfa Romeo",
+    "Desc": "Italian motor manufacturer Alfa Romeo has participated many times in Formula One. It currently participates as Alfa Romeo F1 Team Orlen while being operated by Sauber Motorsport AG. The brand has competed in motor racing as both a constructor and engine supplier sporadically between 1950 and 1987, and later as a commercial partner since 2015.",
     "Driver_1":"Valterri Bottas",
     "Driver_2":"Guanyu Zhou"
   }},
@@ -9,6 +10,7 @@
 
   {"Mercedes":{
     "Name":"Mercedes",
+    "Desc": "Mercedes has become one of the most successful teams in Formula One history, winning seven consecutive Drivers' titles from 2014 to 2020 and eight consecutive Constructors' titles from 2014 to 2021. It has set records for most wins in a season (19 in 2016), and for most consecutive constructors' titles. The manufacturer has also collected more than 200 wins as an engine supplier and is ranked second in Formula One history. Ten Constructors' and thirteen Drivers' Championships have been won with Mercedes-Benz engines. ",
     "Driver_1":"Lewis Hamilton",
     "Driver_2":"George Russell"
   }},
@@ -16,6 +18,7 @@
 
   {"Scuderia Ferrari":{
     "Name":"Scuderia Ferrari",
+    "Desc": "Scuderia Ferrari is the racing division of luxury Italian auto manufacturer Ferrari and the racing team that competes in Formula One racing. The team is also nicknamed \"The Prancing Horse\", in reference to their logo. It is the oldest surviving and most successful Formula One team, having competed in every world championship since the 1950 Formula One season.",
     "Driver_1":"Charles Leclerc",
     "Driver_2":"Carlos Sainz"
   }},
@@ -23,6 +26,7 @@
 
   {"Red Bull Racing": {
     "Name":"Red Bull Racing",
+    "Desc": "The Red Bull Racing team has been managed by Christian Horner since its formation in 2005.The current Red Bull team can trace its origins back to the Stewart Grand Prix outfit that made its debut in 1997. Jackie Stewart sold his team to the Ford Motor Company late in 1999 and Ford made the decision to rebrand the team Jaguar Racing with little subsequent success over the next five years. ",
     "Driver_1":"Max Verstappen",
     "Driver_2":"Sergio Perez"
 
@@ -32,6 +36,7 @@
 
   { "Williams Racing": {
     "Name":"Williams Racing",
+    "Desc": "In May 2020, Williams announced they were seeking buyers for a portion of the team due to poor financial performance in 2019 and that they had terminated the contract of title sponsor ROKiT. On 21 August 2020, Williams was acquired by Dorilton Capital.\n\nFrank and Claire Williams stepped down from their management roles on 6 September 2020, with the 2020 Italian Grand Prix being their last time in their respective positions.",
     "Driver_1":"Alex Albon",
     "Driver_2":"Nicholas Latifi"
 
@@ -41,6 +46,7 @@
 
   { "Aston Martin": {
     "Name":"Aston Martin",
+    "Desc": "Aston Martin is a British car manufacturer that has participated in Formula One in various forms. The company first participated in Formula One during the 1959 season where they debuted the DBR4 chassis using their own engine but it failed to score any points.A commercial rebranding of Racing Point F1 Team resulted in the team's return as Aston Martin in 2021, it competes using Mercedes power units. The team, owned by Lawrence Stroll, has Sebastian Vettel and Lance Stroll as their race drivers. The team is headquartered in Silverstone. ",
     "Driver_1":"Sebastian Vettel",
     "Driver_2":"Lance Stroll"
 
@@ -50,6 +56,7 @@
 
   { "McLaren": {
     "Name":"McLaren",
+    "Desc": "is a British motor racing team based at the McLaren Technology Centre in Woking, Surrey, England. McLaren is best known as a Formula One constructor, the second oldest active team, and the second most successful Formula One team after Ferrari, having won 183 races, 12 Drivers' Championships and 8 Constructors' Championships.",
     "Driver_1":"Daniel Riccardo",
     "Driver_2":"Lando Norris"
 
@@ -59,6 +66,7 @@
 
   {"AlphaTauri": {
     "Name":"AlphaTauri",
+    "Desc": "AlphaTauri, is an Italian Formula One racing team and constructor. It is one of two Formula One constructors owned by Austrian beverage company Red Bull, the other being Red Bull Racing. The constructor was rebranded for the 2020 Formula One World Championship from \"Toro Rosso\" to \"AlphaTauri\" in order to promote the AlphaTauri fashion brand.[5] According to Franz Tost and Helmut Marko, Scuderia AlphaTauri is no longer the junior team but the sister team to Red Bull Racing.",
     "Driver_1":"Pierre Gasly",
     "Driver_2":"Yuki Tsunoda"
 
@@ -68,6 +76,7 @@
 
   {"Haas": {
     "Name":"Haas",
+    "Desc": "Haas is an American Formula One racing team established by NASCAR Cup Series team co-owner Gene Haas in April 2014. The team originally intended to make its debut at the start of the 2015 season but later elected to postpone their entry until the 2016 season. The team principal for the Haas F1 team is Guenther Steiner. ",
     "Driver_1":"Mick Schumacher",
     "Driver_2":"Kevin Magnussen"
 
@@ -77,6 +86,7 @@
 
   {"Alpine": {
     "Name":"Alpine",
+    "Desc": "Alpine is a Formula One constructor which made its debut at the start of the 2021 Formula One World Championship. Formerly named Renault F1 Team and owned by the French automotive company Groupe Renault, the team was rebranded for 2021 to promote Renault's sports car brand, Alpine, and continues to serve as Renault's works team.",
     "Driver_1":"Esteban Ocon",
     "Driver_2":"Fernando Alsono"
 
