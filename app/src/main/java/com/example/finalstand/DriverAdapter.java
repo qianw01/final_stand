@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
@@ -36,14 +35,16 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.ViewHolder
         final DriverEntryModel driverE = driverList.get(position);
 
         holder.name.setText(driverE.getName());
-        holder.desc.setText(driverE.getDesc());
+        holder.team.setText("Team: " + driverE.getTeam());
+        holder.number.setText("Number: " + driverE.getNumber());
 
         ViewCompat.setTransitionName(holder.name, driverE.getName());
+        ViewCompat.setTransitionName(holder.team, driverE.getTeam());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onItemClick(holder.getAdapterPosition(), driverE, holder.name);
+                listener.onItemClick(holder.getAdapterPosition(), driverE, holder.name, holder.team);
             }
         });
     }
@@ -57,13 +58,15 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.ViewHolder
 
         private MaterialCardView cardView;
         private TextView name;
-        private TextView desc;
+        private TextView team;
+        private TextView number;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             cardView = (MaterialCardView) itemView.findViewById(R.id.driverCard);
             name = cardView.findViewById(R.id.name);
-            desc = cardView.findViewById(R.id.desc);
+            team = cardView.findViewById(R.id.team);
+            number = cardView.findViewById(R.id.number);
         }
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/driverCard"
+    android:id="@+id/constructorCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="25dp">
@@ -35,7 +35,7 @@
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 />
             <TextView
-                android:id="@+id/team"
+                android:id="@+id/d1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -44,10 +44,10 @@
                 android:textColor="?android:attr/textColorSecondary"
                 />
             <TextView
-                android:id="@+id/number"
+                android:id="@+id/d2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text="t3"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
