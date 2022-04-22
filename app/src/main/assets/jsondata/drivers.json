@@ -40,6 +40,7 @@
 
   {"Charles Leclerc":{
     "Name":"Charles Leclerc",
+    "Desc": "Charles previously drove for Sauber in 2018.Charles got his first career win in 2019 at the Belgium Grand Prix",
     "Team":"Scuderia Ferrari",
     "Number":"16",
     "Country":"Monaco",
@@ -49,6 +50,7 @@
 
   {"Carlos Sainz":{
     "Name":"Carlos Sainz",
+    "Desc": "Carlos has previously driven for Toro Rosso, Renault, and McLaren.Carlos got his first podium position in 2019 at the Brasil Grand Prix.",
     "Team":"Scuderia Ferrari",
     "Number":"55",
     "Country":"Spain",
@@ -59,6 +61,7 @@
 
   {"Max Verstappen":{
     "Name":"Max Verstappen",
+    "Desc": "Max was the youngest driver ever to compete in Formula 1. Max was only 17 years old during his first race at the Austrailian Grand Prix.",
     "Team":"Red Bull Racing",
     "Number":"1",
     "Country":"Netherlands",
@@ -68,6 +71,7 @@
 
   {"Sergio Perez":{
     "Name":"Sergio Perez",
+    "Desc": "Sergio's nickname is Checo. Sergio has previously driven for Sauber, McLaren, Force India, and Racing Point.",
     "Team":"Red Bull Racing",
     "Number":"11",
     "Country":"Mexico",
@@ -77,6 +81,7 @@
 
   {"Alex Albon":{
     "Name":"Alex Albon",
+    "Desc": "ALex has previously driven for Toro Rosso and Red Bull Racing. Alex's first podium finish came at the 2020 Tuscan Grand Prix",
     "Team":"Williams Racing",
     "Number":"23",
     "Country":"Thailand",
@@ -86,6 +91,7 @@
 
   {"Nicholas Latifi":{
     "Name":"Nicholas Latifi",
+    "Desc": "Nicholas is a Canadian-Iranian racing driver competing for Williams Racing under the Canadian flag in the 2022 Formula One World Championship. He made his Formula One debut at the 2020 Austrian Grand Prix and is the 2019 Formula 2 runner-up.",
     "Team":"Williams Racing",
     "Number":"6",
     "Country":"Canada",
@@ -93,8 +99,9 @@
     "Highest Race Finish":"10"
   }},
 
-  {"Nico Hulkenberg":{
-    "Name":"Nico Hulkenberg",
+  {"Sebastian Vettel":{
+    "Name":"Sebastian Vettel",
+    "Desc": "Sebastian is a German racing driver who competes in Formula One for Aston Martin, having previously driven for BMW Sauber, Toro Rosso, Red Bull, and Ferrari. Vettel has won four World Drivers' Championship titles, which he won consecutively from 2010 to 2013. Vettel is the youngest World Champion in Formula 1. He also has the third-most race victories (53) and podium finishes (122) and fourth-most pole positions (57)",
     "Team":"Aston Martin",
     "Number":"11",
     "Country":"Mexico",
@@ -104,6 +111,7 @@
 
   {"Lance Stroll":{
     "Name":"Lance Stroll",
+    "Desc": "Lance is a Canadian-Belgian[3] racing driver competing under the Canadian flag in Formula One. He drives for Aston Martin since 2021, having previously driven for Williams and Racing Point. He achieved his first podium finish, a 3rd place, at the 2017 Azerbaijan Grand Prix, becoming the second-youngest driver to finish an F1 race on the podium and the youngest (and latest as of the end of 2021) to do so during his rookie season",
     "Team":"Aston Martin",
     "Number":"18",
     "Country":"Canada",
@@ -113,6 +121,7 @@
 
   {"Daniel Riccardo":{
     "Name":"Daniel Riccardo",
+    "Desc": "is an Italian-Australian[2] racing driver who is currently competing in the 2022 FIA Formula One World Drivers Championship driving for the McLaren Formula One team, under the Australian flag. He has achieved 8 Grand Prix victories in Formula One",
     "Team":"McLaren",
     "Number":"3",
     "Country":"Austrailia",
@@ -122,6 +131,7 @@
 
   {"Lando Norris":{
     "Name":"Lando Norris",
+    "Desc": "Lando is a British-Belgian[2] racing driver currently competing in Formula One with McLaren, racing under the British flag.",
     "Team":"McLaren",
     "Number":"4",
     "Country":"United Kingdom",
@@ -131,6 +141,7 @@
 
   {"Pierre Gasly":{
     "Name":"Pierre Gasly",
+    "Dsec": "Gasly is a French racing driver, currently competing in Formula One under the French flag, racing for Scuderia AlphaTauri. Gasly took his maiden Formula One victory at the 2020 Italian Grand Prix while driving for AlphaTauri.",
     "Team":"Alpha Tauri",
     "Number":"10",
     "Country":"France",
@@ -140,6 +151,7 @@
 
   {"Yuki Tsunoda":{
     "Name":"Yuki Tsunoda",
+    "Desc": "Yuki finished third in the 2020 Formula 2 Championship and made his Formula One debut in 2021 for AlphaTauri, a team owned by Red Bull and using Honda engines.",
     "Team":"Alpha Tauri",
     "Number":"22",
     "Country":"Japan",
@@ -149,6 +161,7 @@
 
   {"Kevin Magnussen":{
     "Name":"Kevin Magnussen",
+    "Desc": "Kevin finished third in the 2020 Formula 2 Championship and made his Formula One debut in 2021 for AlphaTauri, a team owned by Red Bull and using Honda engines.",
     "Team":"Haas",
     "Number":"20",
     "Country":"Denmark",
@@ -158,6 +171,7 @@
 
   {"Mick Schumacher":{
     "Name":"Mick Schumacher",
+    "Desc": "Mick a Swiss-born German racing driver. He races for Haas in Formula One under the German flag.He is the son of seven-time Formula One World Champion Michael Schumacher, nephew of Ralf Schumacher and cousin of David Schumacher.",
     "Team":"Haas",
     "Number":"47",
     "Country":"Germany",
@@ -167,6 +181,7 @@
 
   {"Fernando Alonso":{
     "Name":"Fernando Alonso",
+    "Desc":"Alonso is a Spanish racing driver currently competing for Alpine in Formula One. He won the series' World Drivers' Championship in 2005 and 2006 with Renault, and has also driven for McLaren, Ferrari, and Minardi. ",
     "Team":"Alpine",
     "Number":"14",
     "Country":"Spain",
@@ -176,7 +191,7 @@
 
   {"Esetban Ocon":{
     "Name":"Esteban Ocon",
-    "Desc": "",
+    "Desc": "is a French racing driver who competes for Alpine in Formula One. He made his Formula One debut for Manor Racing in the 2016 Belgian Grand Prix.He took his maiden Formula One victory at the 2021 Hungarian Grand Prix.",
     "Team":"Alpine",
     "Number":"31",
     "Country":"France",
