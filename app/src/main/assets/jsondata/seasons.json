@@ -2,88 +2,80 @@
 
 
   {"2021 Season":{
-    "Driver's Championship": "Max Verstappen",
+    "Driver's Champion": "Max Verstappen",
     "Driver's Second Place": "Lewis Hamilton",
     "Driver's Third Place": "Valterri Bottas",
-    "Constructor's Championship": "Mercedes",
-    "Constructor's Second Place": ",",
-    "Constructor's Third Place": ","
+    "Constructor's Champion": "Mercedes",
+    "Constructor's Second Place": "Red Bull Racing",
+    "Constructor's Third Place": "Ferrari"
   }
   },
 
   {"2020 Season":{
-    "Driver's Championship": "",
-    "Driver's First Place": "",
-    "Driver's Second Place": "",
-    "Driver's Third Place": "",
-    "Constructor's Championship": "",
-    "Constructor's First Place": ",",
-    "Constructor's Second Place": ",",
-    "Constructor's Third Place": ","
+    "Driver's Champion": "Lewis Hamilton",
+    "Driver's Second Place": "Valterri Bottas",
+    "Driver's Third Place": "Max Verstappen",
+    "Constructor's Champion": "Mercedes",
+    "Constructor's Second Place": "Red Bull Racing",
+    "Constructor's Third Place": "McLaren"
   }
   },
 
 
   {"2019 Season":{
-    "Driver's Championship": "",
-    "Driver's First Place": "",
-    "Driver's Second Place": "",
-    "Driver's Third Place": "",
-    "Constructor's Championship": "",
-    "Constructor's First Place": ",",
-    "Constructor's Second Place": ",",
-    "Constructor's Third Place": ","
+    "Driver's Champion": "Lewis Hamilton",
+    "Driver's Second Place": "Valterri Bottas",
+    "Driver's Third Place": "Max Verstappen",
+    "Constructor's Champion": "Mercedes",
+    "Constructor's Second Place": "Ferrari",
+    "Constructor's Third Place": "Red Bull Racing"
 
   }
   },
 
 
   {"2018 Season":{
-    "Driver's Championship": "",
-    "Driver's First Place": "",
-    "Driver's Second Place": "",
-    "Driver's Third Place": "",
-    "Constructor's Championship": "",
-    "Constructor's First Place": ",",
-    "Constructor's Second Place": ",",
-    "Constructor's Third Place": ","
+    "Driver's Champion": "Lewis Hamilton",
+    "Driver's Second Place": "Sebastian Vettel",
+    "Driver's Third Place": "Kimi Raikkonen",
+    "Constructor's Champion": "Mercedes",
+    "Constructor's Second Place": "Ferrari",
+    "Constructor's Third Place": "Red Bull Racing"
+
   }
   },
 
 
   {"2017 Season":{
-    "Driver's Championship": "",
-    "Driver's First Place": "",
-    "Driver's Second Place": "",
-    "Driver's Third Place": "",
-    "Constructor's Championship": "",
-    "Constructor's First Place": ",",
-    "Constructor's Second Place": ",",
-    "Constructor's Third Place": ","
+    "Driver's Champion": "Lewis Hamilton",
+    "Driver's Second Place": "Sebastian Vettel",
+    "Driver's Third Place": "Valterri Bottas",
+    "Constructor's Champion": "Mercedes",
+    "Constructor's Second Place": "Ferrari",
+    "Constructor's Third Place": "Red Bull Racing"
+
   }
   },
 
   {"2016 Season":{
-    "Driver's Championship": "",
-    "Driver's First Place": "",
-    "Driver's Second Place": "",
-    "Driver's Third Place": "",
-    "Constructor's Championship": "",
-    "Constructor's First Place": ",",
-    "Constructor's Second Place": ",",
-    "Constructor's Third Place": ","
+    "Driver's Champion": "Nico Rosberg",
+    "Driver's Second Place": "Lewis Hamilton",
+    "Driver's Third Place": "Daniel Riccardo",
+    "Constructor's Champion": "Mercedes",
+    "Constructor's Second Place": "Ferrari",
+    "Constructor's Third Place": "Red Bull Racing"
+
   }
   },
 
   {"2015 Season":{
-    "Driver's Championship": "",
-    "Driver's First Place": "",
-    "Driver's Second Place": "",
-    "Driver's Third Place": "",
-    "Constructor's Championship": "",
-    "Constructor's First Place": ",",
-    "Constructor's Second Place": ",",
-    "Constructor's Third Place": ","
+    "Driver's Champion": "Lewis Hamilton",
+    "Driver's Second Place": "Nico Rosberg",
+    "Driver's Third Place": "Sebastian Vettel",
+    "Constructor's Champion": "Mercedes",
+    "Constructor's Second Place": "Ferrari",
+    "Constructor's Third Place": "Williams"
+
   }
   }
 
