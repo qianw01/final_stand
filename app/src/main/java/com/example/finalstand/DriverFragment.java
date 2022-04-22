@@ -101,7 +101,7 @@ public class DriverFragment extends Fragment implements ItemOnClickListener<Driv
 
         //populate data
         for (int i = 0; i < driverData.length; i++) {
-            DriverEntryModel DriverE = new DriverEntryModel(driverData[i][0], "desc", driverData[i][2], driverData[i][3], driverData[i][4], driverData[i][5], driverData[i][6], 1);
+            DriverEntryModel DriverE = new DriverEntryModel(driverData[i][0], driverData[i][1], driverData[i][2], driverData[i][3], driverData[i][4], driverData[i][5], driverData[i][6], 1);
             data.add(DriverE);
         }
 
@@ -153,6 +153,7 @@ public class DriverFragment extends Fragment implements ItemOnClickListener<Driv
 
                 //populates content array
                 contentArray[i][0] = jOInside.getString("Name");
+                contentArray[i][1] = jOInside.getString("Desc");
                 contentArray[i][2] = jOInside.getString("Team");
                 contentArray[i][3] = jOInside.getString("Number");
                 contentArray[i][4] = jOInside.getString("Country");
@@ -187,7 +188,7 @@ public class DriverFragment extends Fragment implements ItemOnClickListener<Driv
     public void onItemClick(int pos, DriverEntryModel item, MaterialCardView cardView) {
         String transName = ViewCompat.getTransitionName(cardView);
         Fragment dEF = DriverExpandedFragment.newInstance(item, transName);
-        Log.d("log", "onitemclick: " + transName);
+        //Log.d("log", "onitemclick: " + transName);
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
                 .setReorderingAllowed(true)

@@ -2,6 +2,7 @@ package com.example.finalstand;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,6 +23,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,16 +37,12 @@ public class GPFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private static final String[] titles = {"qmatid", "qmaing", "djfklas"};
-    private static final String[] descs = {"hehehsiuuu", "siuuuuuuu\nuuuu", "aahhhhhhhhhhhhhh"};
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private static RecyclerView recyclerView;
     private static GPAdapter GPA;
-    private static ArrayList<GPEntryModel> data;
 
     public GPFragment() {
         // Required empty public constructor
@@ -73,50 +73,37 @@ public class GPFragment extends Fragment {
         }
     }
 
-    private void scheduleStartPostponedTransition(final View sharedElement) {
-        sharedElement.getViewTreeObserver().addOnPreDrawListener(
-                new ViewTreeObserver.OnPreDrawListener() {
-                    @Override
-                    public boolean onPreDraw() {
-                        sharedElement.getViewTreeObserver().removeOnPreDrawListener(this);
-                        startPostponedEnterTransition();
-                        return true;
-                    }
-                });
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        data = new ArrayList<GPEntryModel>();
+        return inflater.inflate(R.layout.fragment_gp, container, false);
+    }
 
-        //get info from json
-        //String[][] GPData = readJSON();
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        //populate data
-        for (int i = 0; i < titles.length; i++) {
-            GPEntryModel GPE = new GPEntryModel(titles[i], descs[i], i);
-            data.add(GPE);
+        Spinner spin = view.findViewById(R.id.gPSpinner);
+
+        List<String> spinnerArray =  new ArrayList<String>();
+
+        String[] seas = {"gp1", "gp2"};
+
+        for (String s: seas) {
+            spinnerArray.add(s);
         }
 
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_gp, container, false);
-
-        GPA = new GPAdapter(data);
-        recyclerView = (RecyclerView) v.findViewById(R.id.recyclingGP);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(GPA);
-
-        return v;
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, spinnerArray);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(adapter);
     }
 
     //---------------json stuff--------------------
     private String[][] readJSON() {
         try {
             JSONObject json = new JSONObject(loadJSON());
-            JSONArray jArray = json.getJSONArray("constructors");
+            JSONArray jArray = json.getJSONArray("Grand Prix");
             String[][] contentArray = new String[jArray.length()][3];
 
             for (int i = 0; i < jArray.length(); i++) {
@@ -135,7 +122,7 @@ public class GPFragment extends Fragment {
     private String loadJSON() {
         String json;
         try {
-            InputStream iS = getContext().getAssets().open("constructing.json");
+            InputStream iS = getContext().getAssets().open("gp.json");
             int size = iS.available();
             byte[] buffer = new byte[size];
             iS.read(buffer);
