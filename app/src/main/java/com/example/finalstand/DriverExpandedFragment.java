@@ -52,7 +52,7 @@ public class DriverExpandedFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         MaterialContainerTransform trans = new MaterialContainerTransform();
-        trans.setDuration(1000);
+        trans.setDuration(300);
         trans.setFadeMode(MaterialContainerTransform.FADE_MODE_CROSS);
         trans.setElevationShadowEnabled(true);
         trans.setScrimColor(Color.TRANSPARENT);
@@ -77,7 +77,7 @@ public class DriverExpandedFragment extends Fragment {
 
         ViewCompat.setTransitionName(view, transitionName);
 
-        Log.d("log", "onViewCreated: " + getArguments().getString(EXTRA_TRANSITION_NAME));
+        //Log.d("log", "onViewCreated: " + getArguments().getString(EXTRA_TRANSITION_NAME));
 
         TextView driverName = (TextView) view.findViewById(R.id.driverName);
         TextView driverTeam = (TextView) view.findViewById(R.id.driverTeam);
@@ -93,7 +93,7 @@ public class DriverExpandedFragment extends Fragment {
         driverCountry.setText("Country: " + dEM.getCountry());
         driverPodiums.setText("Podiums: " + dEM.getPodiums());
         driverHFinish.setText("Highest Race Finish: " + dEM.gethFinish());
-        driverDesc.setText("description for driver");
+        driverDesc.setText(dEM.getDesc());
 
         //driverName.setTransitionName(transitionName);
     }

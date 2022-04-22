@@ -35,8 +35,6 @@ public class ConstructorAdapter extends RecyclerView.Adapter<ConstructorAdapter.
         final ConstructorEntryModel constructorE = constructorList.get(position);
 
         holder.name.setText(constructorE.getName());
-        holder.d1.setText(constructorE.getDriver1());
-        holder.d2.setText(constructorE.getDriver2());
 
         ViewCompat.setTransitionName(holder.name, constructorE.getName());
 
@@ -57,15 +55,11 @@ public class ConstructorAdapter extends RecyclerView.Adapter<ConstructorAdapter.
 
         private MaterialCardView cardView;
         private TextView name;
-        private TextView d1;
-        private TextView d2;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             cardView = (MaterialCardView) itemView.findViewById(R.id.constructorCard);
             name = cardView.findViewById(R.id.name);
-            d1 = cardView.findViewById(R.id.d1);
-            d2 = cardView.findViewById(R.id.d2);
         }
     }
 }

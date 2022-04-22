@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.transition.TransitionInflater;
 
@@ -58,10 +59,19 @@ public class ConstructorExpandedFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ConstructorEntryModel animalItem = getArguments().getParcelable(EXTRA_ENTRY_MODEL);
+        ConstructorEntryModel cEM = getArguments().getParcelable(EXTRA_ENTRY_MODEL);
         String transitionName = getArguments().getString(EXTRA_TRANSITION_NAME);
 
         TextView constructorName = (TextView) view.findViewById(R.id.constructorName);
+        TextView constructorDesc = (TextView) view.findViewById(R.id.constructorDesc);
+        TextView constructorD1 = (TextView) view.findViewById(R.id.constructorD1);
+        TextView constructorD2 = (TextView) view.findViewById(R.id.constructorD2);
+
+        constructorName.setText(cEM.getName());
+        constructorD1.setText("Driver 1: " + cEM.getDriver1());
+        constructorD2.setText("Driver 2: " + cEM.getDriver2());
+        constructorDesc.setText(cEM.getDesc());
+
         constructorName.setTransitionName(transitionName);
     }
 }

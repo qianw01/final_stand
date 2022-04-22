@@ -2,6 +2,8 @@ package com.example.finalstand;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -14,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
+
+import com.google.android.material.transition.Hold;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -70,6 +74,7 @@ public class ConstructorFragment extends Fragment implements ItemOnClickListener
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        setExitTransition(new Hold());
     }
 
     private void scheduleStartPostponedTransition(final View sharedElement) {
@@ -94,7 +99,7 @@ public class ConstructorFragment extends Fragment implements ItemOnClickListener
 
         //populate data
         for (int i = 0; i < constructorData.length; i++) {
-            ConstructorEntryModel ConstructorE = new ConstructorEntryModel(constructorData[i][0], constructorData[i][1], constructorData[i][2], i);
+            ConstructorEntryModel ConstructorE = new ConstructorEntryModel(constructorData[i][0], constructorData[i][1], constructorData[i][2], constructorData[i][3], i);
             data.add(ConstructorE);
         }
 
@@ -112,20 +117,40 @@ public class ConstructorFragment extends Fragment implements ItemOnClickListener
         return v;
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        // this is required to animate correctly when the user returns
+        // to the origin fragment, gives a chance for the layout
+        // to be fully laid out before animating it
+        ViewGroup viewGroup = (ViewGroup) view.getParent();
+        postponeEnterTransition();
+        viewGroup
+                .getViewTreeObserver()
+                .addOnPreDrawListener(() -> {
+                    startPostponedEnterTransition();
+                    return true;
+                });
+
+        super.onViewCreated(view, savedInstanceState);
+
+    }
+
     //---------------json stuff--------------------
     private String[][] readJSON() {
         try {
             JSONObject json = new JSONObject(loadJSON());
             JSONArray jArray = json.getJSONArray("Constructors");
-            String[][] contentArray = new String[jArray.length()][3];
+            String[][] contentArray = new String[jArray.length()][4];
 
             for (int i = 0; i < jArray.length(); i++) {
                 JSONObject jInitObj = jArray.getJSONObject(i);
                 String key = (jInitObj.keys().next());
                 JSONObject jOInside = ((JSONObject)jInitObj.get(key));
                 contentArray[i][0] = jOInside.getString("Name");
-                contentArray[i][1] = jOInside.getString("Driver_1");
-                contentArray[i][2] = jOInside.getString("Driver_2");
+                contentArray[i][1] = jOInside.getString("Desc");
+                contentArray[i][2] = jOInside.getString("Driver_1");
+                contentArray[i][3] = jOInside.getString("Driver_2");
             }
             return contentArray;
         } catch (JSONException e) {
