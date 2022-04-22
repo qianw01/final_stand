@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.google.android.material.transition.MaterialContainerTransform;
@@ -95,6 +97,26 @@ public class DriverExpandedFragment extends Fragment {
         driverHFinish.setText("Highest Race Finish: " + dEM.gethFinish());
         driverDesc.setText(dEM.getDesc());
 
-        //driverName.setTransitionName(transitionName);
+        //----------favorites stuff--------------
+        CheckBox favBox = (CheckBox) view.findViewById(R.id.favBox);
+
+        String dName = dEM.getName();
+        FavoritesDB db = new FavoritesDB(getContext(), "Drivers");
+        if (db.checkContains("name", dName)) {
+            favBox.setChecked(true);
+        }
+
+        favBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    Log.d("log", "now checked");
+                    db.addInfo(dEM.getName(), dEM.getDesc());
+                } else {
+                    Log.d("log", "now unchecked");
+                    db.deleteInfo(dEM.getName());
+                }
+            }
+        });
     }
 }

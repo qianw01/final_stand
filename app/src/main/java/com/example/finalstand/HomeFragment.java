@@ -107,5 +107,22 @@ public class HomeFragment extends Fragment {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://google.com")));
             }
         });
+
+        //-------------favorites stuff----------------
+        Button favBtn = view.findViewById(R.id.favBtn);
+
+        favBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment favFrag = FavoritesFragment.newInstance();
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .setReorderingAllowed(true)
+                        .addToBackStack(null)
+                        .replace(R.id.navHostFrag, favFrag)
+                        .commit();
+            }
+        });
     }
 }

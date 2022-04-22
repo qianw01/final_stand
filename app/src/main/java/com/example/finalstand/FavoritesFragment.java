@@ -1,12 +1,20 @@
 package com.example.finalstand;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,16 +40,12 @@ public class FavoritesFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment FavoritesFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FavoritesFragment newInstance(String param1, String param2) {
+    public static FavoritesFragment newInstance() {
         FavoritesFragment fragment = new FavoritesFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -58,7 +62,41 @@ public class FavoritesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_favorites, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        LinearLayout favsLayout = (LinearLayout) view.findViewById(R.id.favsLayout);
+
+        FavoritesDB db = new FavoritesDB(getContext(), "Drivers");
+        ArrayList<String[]> info = db.readAll();
+
+        LinearLayout.LayoutParams nameLayout = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        nameLayout.setMargins(20, 20, 20, 0);
+
+        LinearLayout.LayoutParams descLayout = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        descLayout.setMargins(30, 10, 20, 0);
+
+        for (String[] sA: info) {
+            //name
+            TextView nameView = new TextView(getContext());
+            nameView.setTypeface(Typeface.DEFAULT_BOLD);
+            nameView.setText(sA[0]);
+            nameView.setLayoutParams(nameLayout);
+            favsLayout.addView(nameView);
+
+            //desc
+            TextView descView = new TextView(getContext());
+            descView.setText(sA[1]);
+            descView.setLayoutParams(descLayout);
+            favsLayout.addView(descView);
+        }
+
+        super.onViewCreated(view, savedInstanceState);
+
     }
 }
