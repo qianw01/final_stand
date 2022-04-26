@@ -13,8 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -84,19 +86,41 @@ public class GPFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        String[][] gpInfo = readJSON();
+
         Spinner spin = view.findViewById(R.id.gPSpinner);
 
         List<String> spinnerArray =  new ArrayList<String>();
-
-        String[] seas = {"gp1", "gp2"};
-
-        for (String s: seas) {
-            spinnerArray.add(s);
+        for (String[] s: gpInfo) {
+            spinnerArray.add(s[0]);
         }
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, spinnerArray);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
+
+        TextView gPTitle = (TextView) view.findViewById(R.id.gPTitle);
+        TextView gPD = (TextView) view.findViewById(R.id.gPDate);
+        TextView gPR = (TextView) view.findViewById(R.id.gPRound);
+        gPTitle.setText("GP: " + gpInfo[0][0]);
+        gPD.setText("Dates: " + gpInfo[0][1]);
+        gPR.setText("Rounds: " + gpInfo[0][2]);
+
+        spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                int currGP = spin.getSelectedItemPosition();
+
+                gPTitle.setText("GP: " + gpInfo[currGP][0]);
+                gPD.setText("Dates: " + gpInfo[currGP][1]);
+                gPR.setText("Rounds: " + gpInfo[currGP][2]);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     //---------------json stuff--------------------
@@ -104,13 +128,16 @@ public class GPFragment extends Fragment {
         try {
             JSONObject json = new JSONObject(loadJSON());
             JSONArray jArray = json.getJSONArray("Grand Prix");
-            String[][] contentArray = new String[jArray.length()][3];
+            String[][] contentArray = new String[jArray.length()][7];
 
+            //Log.d("log", String.valueOf(jArray.length()));
             for (int i = 0; i < jArray.length(); i++) {
-                JSONObject jOInside = jArray.getJSONObject(i);
-                contentArray[i][0] = jOInside.getString("name");
-                contentArray[i][1] = jOInside.getString("desc");
-                contentArray[i][2] = jOInside.getString("pic");
+                JSONObject jInitObj = jArray.getJSONObject(i);
+                String key = (jInitObj.keys().next());
+                JSONObject jOInside = ((JSONObject)jInitObj.get(key));
+                contentArray[i][0] = jOInside.getString("Name");
+                contentArray[i][1] = jOInside.getString("Date");
+                contentArray[i][2] = jOInside.getString("Round");
             }
             return contentArray;
         } catch (JSONException e) {
@@ -122,7 +149,7 @@ public class GPFragment extends Fragment {
     private String loadJSON() {
         String json;
         try {
-            InputStream iS = getContext().getAssets().open("gp.json");
+            InputStream iS = getContext().getAssets().open("jsondata/gp.json");
             int size = iS.available();
             byte[] buffer = new byte[size];
             iS.read(buffer);
